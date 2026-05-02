@@ -1,0 +1,22 @@
+// app.mx — mxscript.com
+//
+// The official website for MX Script, written in MX Script.
+//
+// Run with:  mx run app.mx
+// Visit:     http://localhost:8080
+
+server {
+  port: 8080
+  host: "0.0.0.0"
+}
+
+get / {
+  return json({
+    site: "mxscript.com",
+    status: "under construction",
+    language: "MX Script",
+    repo: "https://github.com/jlkdevelop/mxscript",
+    founder: "Jassim Alkharafi",
+    note: "This site is being built in MX Script itself, in parallel with the language."
+  })
+}
