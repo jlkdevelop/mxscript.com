@@ -299,14 +299,46 @@ fn styles() {
     ".footer a { color: #475569; }",
     ".footer a:hover { color: #2c46b0; }",
 
-    // Responsive
-    "@media (max-width: 600px) {",
-    "  .hero h1 { font-size: 40px; }",
-    "  .lede { font-size: 16px; }",
+    // Responsive — tablet & small laptop
+    "@media (max-width: 760px) {",
+    "  main { padding: 0 20px; }",
+    "  .nav { padding: 20px; }",
+    "  .footer { padding: 36px 20px 56px; }",
+    "  .hero h1 { font-size: 44px; }",
+    "  .lede { font-size: 17px; }",
     "  .grid { grid-template-columns: 1fr; }",
-    "  .dogfood h2 { font-size: 26px; }",
+    "  .dogfood h2 { font-size: 28px; }",
     "  section { padding: 56px 0; }",
-    "  .nav-links { gap: 16px; }",
+    "  .nav-links { gap: 18px; }",
+    "  .code { padding: 20px; font-size: 13px; }",
+    "}",
+
+    // Phone — narrow viewports
+    "@media (max-width: 480px) {",
+    "  body { font-size: 15px; }",
+    "  main { padding: 0 16px; }",
+    "  .nav { padding: 16px; }",
+    "  .footer { padding: 32px 16px 48px; }",
+    "  .nav-links { gap: 14px; font-size: 13px; }",
+    "  .brand-name { font-size: 15px; }",
+    "  .mark { width: 28px; height: 28px; }",
+    "  .hero h1 { font-size: 36px; line-height: 1.08; letter-spacing: -0.02em; }",
+    "  .lede { font-size: 16px; }",
+    "  .eyebrow { font-size: 11px; padding: 3px 10px; }",
+    "  .cta { flex-direction: column; align-items: stretch; }",
+    "  .btn { justify-content: center; padding: 13px 18px; }",
+    "  section { padding: 44px 0; }",
+    "  section:first-child { padding-top: 32px; }",
+    "  .code { padding: 16px; font-size: 12.5px; line-height: 1.6; border-radius: 10px; }",
+    "  .card { padding: 18px; }",
+    "  .dogfood h2 { font-size: 24px; }",
+    "}",
+
+    // Tiny phones (iPhone SE etc.)
+    "@media (max-width: 360px) {",
+    "  .hero h1 { font-size: 32px; }",
+    "  .nav-links { gap: 12px; }",
+    "  .nav-links a:nth-child(3) { display: none; }",
     "}"
   ], "\n")
 }
