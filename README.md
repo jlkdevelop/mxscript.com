@@ -8,16 +8,23 @@ The official website for [MX Script](https://github.com/jlkdevelop/mxscript) —
 
 This repository hosts the source for **mxscript.com**, the official site for the MX Script language.
 
-**Goal:** the entire site is built using MX Script itself. Every route, every page, every endpoint — written in `.mx`. The site is the language's first real-world dogfood, and grows in parallel with the language.
+**Goal:** the entire site is built using MX Script itself. Every route, every page, every byte of HTML — generated from `.mx` code. The site is the language's first real-world dogfood, and grows in parallel with the language.
 
-That means this repo is intentionally minimal today. As the language gains the features the site needs (templating, asset pipeline, etc.), the site grows alongside it.
+The whole site lives in a single file: [`app.mx`](./app.mx). HTML is built up from small functions that return strings; CSS is inlined; routes are first-class. As the language gains features the site needs (templating, asset pipeline, etc.), the site grows alongside it.
 
 ## Stack
 
 - **Language:** [MX Script](https://github.com/jlkdevelop/mxscript)
 - **Runtime:** the `mx` CLI (`mx run app.mx`)
-- **Static assets:** served via the `static` directive
-- **No JS frameworks. No build step. One file.**
+- **Output:** HTML rendered directly from `.mx` via the `html()` response helper
+- **No JS frameworks. No build step. No `node_modules`. One file.**
+
+## Routes
+
+| Path       | Purpose                                          |
+| ---------- | ------------------------------------------------ |
+| `/`        | The landing page (full HTML rendered from `.mx`) |
+| `/status`  | JSON heartbeat — proof that MX Script serves it  |
 
 ## Running locally
 
