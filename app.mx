@@ -49,6 +49,7 @@ fn landing_page() {
     install_section(),
     features_section(),
     channels_section(),
+    about_section(),
     dogfood_callout(),
     "</main>",
     footer_section(),
@@ -93,9 +94,11 @@ fn nav_bar() {
     "    <img class='mark' src='" + LOGO_MARK_PNG + "' alt='MX Script'>",
     "  </a>",
     "  <div class='nav-links'>",
+    "    <a href='#about'>About</a>",
     "    <a href='https://github.com/jlkdevelop/mxscript#getting-started'>Docs</a>",
     "    <a href='https://github.com/jlkdevelop/mxscript'>GitHub</a>",
-    "    <a href='https://github.com/jlkdevelop/mxscript/releases'>Releases</a>",
+    "    <a href='https://github.com/jlkdevelop/mxscript/releases'>Download</a>",
+    "    <a href='https://try.mxscript.com' class='nav-playground'>Playground</a>",
     "  </div>",
     "</nav>"
   ], "\n")
@@ -311,6 +314,32 @@ fn runtime_script() {
   ], "\n")
 }
 
+fn about_section() {
+  return join([
+    "<section id='about' class='about'>",
+    "  <p class='section-label'>About</p>",
+    "  <h2 class='section-h'>Why MX Script exists.</h2>",
+    "  <div class='about-grid'>",
+    "    <div class='about-prose'>",
+    "      <p>Most modern web work pays a tax: <em>before</em> you write the thing you actually wanted to build, you assemble a runtime, a framework, a router, a build tool, a deploy story, and twenty config files. The simple case — <em>'I want a JSON endpoint that does one useful thing'</em> — gets buried under setup.</p>",
+    "      <p>MX Script collapses that. The language <em>is</em> the framework. Routes, middleware, sessions, JSON, JWT, SQL, and AI tool calling are first-class. There's no <code>npm install</code>, no <code>package.json</code>, no <code>node_modules</code>. One file. <code>mx run app.mx</code>. You're shipping.</p>",
+    "      <p>It's MIT-licensed, built in the open, and intentionally small — under 134 builtins covering the 80% case for HTTP services. The interpreter is a single Go binary; the language is <a href='https://github.com/jlkdevelop/mxscript'>jlkdevelop/mxscript</a>; this site is itself written in MX Script (<a href='https://github.com/jlkdevelop/mxscript.com'>view source</a>).</p>",
+    "    </div>",
+    "    <aside class='about-card'>",
+    "      <div class='about-meta'>",
+    "        <div class='about-row'><span class='about-key'>Founder</span><span class='about-val'>Jassim Alkharafi</span></div>",
+    "        <div class='about-row'><span class='about-key'>License</span><span class='about-val'>MIT</span></div>",
+    "        <div class='about-row'><span class='about-key'>Written in</span><span class='about-val'>Go</span></div>",
+    "        <div class='about-row'><span class='about-key'>Repo</span><span class='about-val'><a href='https://github.com/jlkdevelop/mxscript'>jlkdevelop/mxscript</a></span></div>",
+    "        <div class='about-row'><span class='about-key'>Status</span><span class='about-val'><span class='about-dot'></span>Active development</span></div>",
+    "      </div>",
+    "      <a class='about-link' href='https://github.com/jlkdevelop'>Connect with the founder →</a>",
+    "    </aside>",
+    "  </div>",
+    "</section>"
+  ], "\n")
+}
+
 fn dogfood_callout() {
   return join([
     "<section class='dogfood'>",
@@ -368,11 +397,18 @@ fn styles() {
     "}",
     ".brand { display: flex; align-items: center; gap: 12px; font-weight: 600; color: #0f172a; }",
     ".brand:hover { color: #0f172a; }",
-    ".mark { width: 32px; height: 32px; display: block; }",
+    ".mark { width: 44px; height: 44px; display: block; object-fit: contain; }",
     ".brand-name { letter-spacing: -0.01em; font-size: 16px; }",
-    ".nav-links { display: flex; gap: 24px; font-size: 14px; }",
-    ".nav-links a { color: #475569; }",
+    ".nav-links { display: flex; align-items: center; gap: 22px; font-size: 14px; }",
+    ".nav-links a { color: #475569; transition: color 100ms ease; }",
     ".nav-links a:hover { color: #2c46b0; }",
+    ".nav-playground {",
+    "  color: #2c46b0 !important; font-weight: 600;",
+    "  padding: 6px 12px; border-radius: 7px;",
+    "  background: #eef2ff;",
+    "  transition: background 100ms ease, color 100ms ease;",
+    "}",
+    ".nav-playground:hover { background: #2c46b0; color: #ffffff !important; }",
 
     // Hero
     ".eyebrow {",
@@ -584,6 +620,47 @@ fn styles() {
     ".footer a { color: #475569; }",
     ".footer a:hover { color: #2c46b0; }",
 
+    // ─── About section ─────────────────────────────────────────────────────
+    ".about { padding: 64px 0; }",
+    ".about-grid {",
+    "  display: grid;",
+    "  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);",
+    "  gap: 32px; align-items: start;",
+    "}",
+    ".about-prose { font-size: 16px; line-height: 1.7; color: #334155; }",
+    ".about-prose p { margin-bottom: 18px; }",
+    ".about-prose p:last-child { margin-bottom: 0; }",
+    ".about-prose a { color: #2c46b0; font-weight: 500; }",
+    ".about-prose a:hover { text-decoration: underline; }",
+    ".about-prose code {",
+    "  background: #f1f5f9; padding: 1px 6px; border-radius: 4px;",
+    "  font-size: 14px; color: #0f172a;",
+    "}",
+    ".about-prose em { color: #0f172a; font-style: normal; font-weight: 600; }",
+    ".about-card {",
+    "  padding: 22px;",
+    "  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;",
+    "  position: sticky; top: 24px;",
+    "}",
+    ".about-meta { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }",
+    ".about-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13.5px; }",
+    ".about-key { color: #94a3b8; font-family: ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }",
+    ".about-val { color: #0f172a; font-weight: 500; text-align: right; }",
+    ".about-val a { color: #2c46b0; }",
+    ".about-val a:hover { text-decoration: underline; }",
+    ".about-dot {",
+    "  display: inline-block; width: 7px; height: 7px; border-radius: 50%;",
+    "  background: #10b981; margin-right: 6px; vertical-align: middle;",
+    "  box-shadow: 0 0 0 3px rgba(16,185,129,0.15);",
+    "}",
+    ".about-link {",
+    "  display: inline-flex; align-items: center;",
+    "  font-size: 13.5px; font-weight: 600; color: #2c46b0;",
+    "  padding-top: 16px; border-top: 1px solid #e2e8f0;",
+    "  width: 100%;",
+    "}",
+    ".about-link:hover { color: #1e3a8a; }",
+
     // Responsive — tablet & small laptop
     "@media (max-width: 760px) {",
     "  main { padding: 0 20px; }",
@@ -594,8 +671,11 @@ fn styles() {
     "  .grid { grid-template-columns: 1fr; }",
     "  .dogfood h2 { font-size: 28px; }",
     "  section { padding: 56px 0; }",
-    "  .nav-links { gap: 18px; }",
+    "  .nav-links { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }",
     "  .code { padding: 20px; font-size: 13px; }",
+    "  .about-grid { grid-template-columns: 1fr; gap: 24px; }",
+    "  .about-card { position: static; }",
+    "  .about, .install, .channels { padding: 48px 0; }",
     "}",
 
     // Tablet — install + channel grids stack
@@ -613,11 +693,16 @@ fn styles() {
     "@media (max-width: 480px) {",
     "  body { font-size: 15px; }",
     "  main { padding: 0 16px; }",
-    "  .nav { padding: 16px; }",
+    "  .nav {",
+    "    padding: 14px 16px;",
+    "    flex-direction: column; align-items: stretch; gap: 10px;",
+    "  }",
+    "  .brand { justify-content: center; }",
+    "  .nav-links { justify-content: center; gap: 14px; font-size: 13px; }",
+    "  .nav-playground { padding: 5px 10px; }",
     "  .footer { padding: 32px 16px 48px; }",
-    "  .nav-links { gap: 14px; font-size: 13px; }",
     "  .brand-name { font-size: 15px; }",
-    "  .mark { width: 28px; height: 28px; }",
+    "  .mark { width: 40px; height: 40px; }",
     "  .hero h1 { font-size: 36px; line-height: 1.08; letter-spacing: -0.02em; }",
     "  .lede { font-size: 16px; }",
     "  .eyebrow { font-size: 11px; padding: 3px 10px; }",
@@ -632,13 +717,14 @@ fn styles() {
     "  .install-arch-group { width: 100%; }",
     "  .arch-btn { flex: 1; justify-content: center; }",
     "  .install-foot { font-size: 12.5px; }",
+    "  .about-card { padding: 18px; }",
     "}",
 
     // Tiny phones (iPhone SE etc.)
     "@media (max-width: 360px) {",
     "  .hero h1 { font-size: 32px; }",
-    "  .nav-links { gap: 12px; }",
-    "  .nav-links a:nth-child(3) { display: none; }",
+    "  .nav-links { gap: 10px; font-size: 12.5px; }",
+    "  .nav-playground { padding: 4px 8px; }",
     "}"
   ], "\n")
 }
