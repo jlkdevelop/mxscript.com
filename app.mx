@@ -28,7 +28,7 @@ get /status {
     served_by: "MX Script",
     repo: "https://github.com/jlkdevelop/mxscript.com",
     language: "https://github.com/jlkdevelop/mxscript",
-    founder: "Jassim Alkharafi",
+    creator: "Jassim Alkharafi",
     timestamp: now_iso()
   })
 }
@@ -327,13 +327,13 @@ fn about_section() {
     "    </div>",
     "    <aside class='about-card'>",
     "      <div class='about-meta'>",
-    "        <div class='about-row'><span class='about-key'>Founder</span><span class='about-val'>Jassim Alkharafi</span></div>",
+    "        <div class='about-row'><span class='about-key'>Creator</span><span class='about-val'>Jassim Alkharafi</span></div>",
     "        <div class='about-row'><span class='about-key'>License</span><span class='about-val'>MIT</span></div>",
     "        <div class='about-row'><span class='about-key'>Written in</span><span class='about-val'>Go</span></div>",
     "        <div class='about-row'><span class='about-key'>Repo</span><span class='about-val'><a href='https://github.com/jlkdevelop/mxscript'>jlkdevelop/mxscript</a></span></div>",
     "        <div class='about-row'><span class='about-key'>Status</span><span class='about-val'><span class='about-dot'></span>Active development</span></div>",
     "      </div>",
-    "      <a class='about-link' href='https://github.com/jlkdevelop'>Connect with the founder →</a>",
+    "      <a class='about-link' href='https://github.com/jlkdevelop'>Connect with the creator →</a>",
     "    </aside>",
     "  </div>",
     "</section>"
@@ -354,7 +354,7 @@ fn dogfood_callout() {
 fn footer_section() {
   return join([
     "<footer class='footer'>",
-    "  <p>Founded by <a href='https://github.com/jlkdevelop'>Jassim Alkharafi</a>. MIT licensed and built in the open.</p>",
+    "  <p>Created by <a href='https://github.com/jlkdevelop'>Jassim Alkharafi</a>. MIT licensed and built in the open.</p>",
     "</footer>"
   ], "\n")
 }
