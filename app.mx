@@ -129,24 +129,30 @@ fn hero_section() {
 fn code_demo_section() {
   let sample = join([
     "server { port: 8080 }",
+    "let db = sql.open(\"./app.db\")",
+    "sql.migrate(db, [\"CREATE TABLE IF NOT EXISTS links (code TEXT PRIMARY KEY, url TEXT, hits INT DEFAULT 0)\"])",
     "",
-    "let users = [",
-    "  { id: 1, name: \"Ada Lovelace\" },",
-    "  { id: 2, name: \"Alan Turing\"  }",
-    "]",
+    "post /shorten {",
+    "  let r = body_validate(request, {",
+    "    type: \"object\", required: [\"url\"],",
+    "    properties: { url: { type: \"string\", min_length: 8 } }",
+    "  })",
+    "  if (!r.ok) { return r.response }",
+    "  let code = id.nanoid(7)",
+    "  sql.insert(db, \"links\", { code: code, url: r.body.url, hits: 0 })",
+    "  return status(201, { code: code, target: r.body.url })",
+    "}",
     "",
-    "get /users/:id {",
-    "  let id = num(request.params.id)",
-    "  let user = find(users, fn(u) { return u.id == id })",
-    "  if (user == null) {",
-    "    return status(404, { error: \"not found\" })",
-    "  }",
-    "  return json(user)",
+    "get /:code {",
+    "  let link = sql.find_one(db, \"links\", { code: request.params.code })",
+    "  if (link == null) { return problem(404, \"Not found\") }",
+    "  sql.update(db, \"links\", { hits: link.hits + 1 }, { code: link.code })",
+    "  return redirect(link.url)",
     "}"
   ], "\n")
   return join([
     "<section class='demo'>",
-    "  <p class='section-label'>A real JSON API. One file.</p>",
+    "  <p class='section-label'>A real URL shortener. One file.</p>",
     "  <pre class='code'><code>" + sample + "</code></pre>",
     "</section>"
   ], "\n")
