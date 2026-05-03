@@ -1,6 +1,6 @@
 # mxscript.com
 
-The official website for [MX Script](https://github.com/jlkdevelop/mxscript) — a modern, open-source scripting language for building web apps and APIs.
+The official website for [MX Script](https://github.com/jlkdevelop/mxscript) — a lightweight scripting language for building one-file web APIs.
 
 > Created by [Jassim Alkharafi](https://github.com/jlkdevelop). MIT-licensed and built in the open.
 

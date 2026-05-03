@@ -66,11 +66,11 @@ fn head_section() {
     "<head>",
     "  <meta charset='utf-8'>",
     "  <meta name='viewport' content='width=device-width, initial-scale=1'>",
-    "  <title>MX Script — modern scripting for web apps and APIs</title>",
-    "  <meta name='description' content='MX Script is a modern, open-source scripting language for building web apps and APIs. One file. Zero boilerplate.'>",
+    "  <title>MX Script — a lightweight scripting language for one-file web APIs</title>",
+    "  <meta name='description' content='MX Script is a lightweight scripting language for building one-file web APIs. No framework, no build step, no node_modules. Run with mx run app.mx.'>",
     "  <meta name='theme-color' content='#ffffff'>",
     "  <meta property='og:title' content='MX Script'>",
-    "  <meta property='og:description' content='A modern open-source language for web apps and APIs. One file. Zero boilerplate.'>",
+    "  <meta property='og:description' content='A lightweight scripting language for building one-file web APIs.'>",
     "  <meta property='og:url' content='https://mxscript.com'>",
     "  <link rel='icon' type='image/png' href='" + FAVICON_PNG + "'>",
     "  <link rel='apple-touch-icon' href='" + LOGO_MARK_PNG + "'>",
@@ -112,8 +112,8 @@ fn hero_section() {
   return join([
     "<section class='hero'>",
     "  <p class='eyebrow'>Open source · MIT licensed</p>",
-    "  <h1>Modern scripting<br>for the web.</h1>",
-    "  <p class='lede'>MX Script is a tiny, opinionated language for building web apps and APIs. One file. Zero boilerplate. Batteries included — HTTP, JSON, JWT, sessions, SQL, AI tool calling.</p>",
+    "  <h1>Lightweight scripting<br>for one-file web APIs.</h1>",
+    "  <p class='lede'>MX Script is a lightweight scripting language for building one-file web APIs. Routes, JSON, JWT, sessions, SQL, AI — all first-class. No framework, no build step, no <code>node_modules</code>. <code>mx run app.mx</code> and you&rsquo;re shipping.</p>",
     "  <div class='cta'>",
     "    <a class='btn primary' href='https://try.mxscript.com'>",
     "      <span class='play'>▶</span> Try in your browser",
@@ -146,7 +146,7 @@ fn code_demo_section() {
   ], "\n")
   return join([
     "<section class='demo'>",
-    "  <p class='section-label'>An entire JSON API. One file.</p>",
+    "  <p class='section-label'>A real JSON API. One file.</p>",
     "  <pre class='code'><code>" + sample + "</code></pre>",
     "</section>"
   ], "\n")
@@ -324,8 +324,8 @@ fn about_section() {
     "  <div class='about-hero'>",
     "    <img class='about-logo' src='" + LOGO_MARK_PNG + "' alt='MX Script' width='80' height='80'>",
     "    <p class='section-label about-label'>About MX Script</p>",
-    "    <h2 class='about-h'>One file. The whole web stack.</h2>",
-    "    <p class='about-lead'>MX Script collapses the gap between &ldquo;I want a JSON endpoint that does one useful thing&rdquo; and &ldquo;it's deployed.&rdquo; ~200 stdlib functions, zero <code>npm install</code>, one binary.</p>",
+    "    <h2 class='about-h'>One file. One binary. One command to ship.</h2>",
+    "    <p class='about-lead'>MX Script collapses the gap between &ldquo;I want a JSON endpoint that does one useful thing&rdquo; and &ldquo;it&rsquo;s deployed.&rdquo; A lightweight scripting language for one-file web APIs &mdash; ~200 stdlib functions, zero <code>npm install</code>, one binary.</p>",
     "  </div>",
     "",
     "  <div class='principles'>",
