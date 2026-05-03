@@ -97,11 +97,11 @@ fn nav_bar() {
     "  </a>",
     "  <div class='nav-links'>",
     "    <a href='#about'>About</a>",
-    "    <a href='#learn'>Learn</a>",
     "    <a href='https://github.com/jlkdevelop/mxscript#getting-started'>Docs</a>",
     "    <a href='#get-involved'>Get Involved</a>",
     "    <a href='https://github.com/jlkdevelop/mxscript'>GitHub</a>",
     "    <a href='https://github.com/jlkdevelop/mxscript/releases'>Download</a>",
+    "    <a href='#help'>Help</a>",
     "    <a href='https://try.mxscript.com'>Playground</a>",
     "  </div>",
     "</nav>"
@@ -371,9 +371,9 @@ fn about_section() {
 
 fn learn_section() {
   return join([
-    "<section id='learn' class='learn'>",
-    "  <p class='section-label learn-label'>Learn</p>",
-    "  <h2 class='section-h'>Get good with MX Script in an afternoon.</h2>",
+    "<section id='help' class='learn'>",
+    "  <p class='section-label learn-label'>Help</p>",
+    "  <h2 class='section-h'>Get unstuck. Get going.</h2>",
     "  <p class='section-lead'>Three paths from <em>'I just installed it'</em> to <em>'I shipped a real app'</em>. Pick whichever matches how you learn.</p>",
     "  <div class='learn-grid'>",
     "    <a class='learn-card' href='https://github.com/jlkdevelop/mxscript#quickstart'>",
